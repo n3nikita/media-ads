@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "media-ads", "media-ads\media-ads.csproj", "{339E9EA7-570A-47EC-BE61-E2CC21EEE075}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "media-ads", "media-ads\media-ads.csproj", "{339E9EA7-570A-47EC-BE61-E2CC21EEE075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaAds.Core", "MediaAds.Core\MediaAds.Core.csproj", "{FDD590CC-FFFE-4634-B096-7672E42C6271}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{339E9EA7-570A-47EC-BE61-E2CC21EEE075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{339E9EA7-570A-47EC-BE61-E2CC21EEE075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{339E9EA7-570A-47EC-BE61-E2CC21EEE075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD590CC-FFFE-4634-B096-7672E42C6271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD590CC-FFFE-4634-B096-7672E42C6271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD590CC-FFFE-4634-B096-7672E42C6271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD590CC-FFFE-4634-B096-7672E42C6271}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
