@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Type = MediaAds.Core.Models.Type;
 
-namespace MediaAds.Core.Database.Models
+namespace MediaAds.Core.Models
 {
-    public class Channel
+    public class Channel : BaseModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Link { get; set; }
         public int Subscribers { get; set; }

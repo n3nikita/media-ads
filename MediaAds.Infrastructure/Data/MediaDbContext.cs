@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MediaAds.Core.Database.Models;
+﻿using MediaAds.Core.Models;
 using Microsoft.EntityFrameworkCore;
-using Type = MediaAds.Core.Database.Models.Type;
+using Type = MediaAds.Core.Models.Type;
 
-namespace MediaAds.Core.Database
+namespace MediaAds.Infrastructure.Data
 {
     public class MediaDbContext : DbContext
     {
