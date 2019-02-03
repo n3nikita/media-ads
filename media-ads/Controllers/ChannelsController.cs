@@ -23,5 +23,19 @@ namespace media_ads.Controllers
             var channels = await _channelRepository.GetAllAsync();
             return Ok(channels);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Get(int id)
+        {
+            var channel = await _channelRepository.GetByIdAsync(id);
+            return Ok(channel);
+        }
+
+        //[HttpGet]
+        //public async Task<IActionResult> GetByCategory(int category)
+        //{
+        //    var channels = await _channelRepository.
+        //    return Ok(channels);
+        //}
     }
 }
