@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AssemblyName>media-ads</AssemblyName>
-    <RootNamespace>media-ads</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <RootNamespace>Web</RootNamespace>
     <UserSecretsId>f1ba5641-3870-470e-bc3a-fc4658fe0dc8</UserSecretsId>
   </PropertyGroup>
 

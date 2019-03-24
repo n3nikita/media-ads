@@ -6,7 +6,7 @@ using MediaAds.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace media_ads.Controllers
+namespace Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

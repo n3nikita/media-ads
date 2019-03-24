@@ -4,13 +4,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using media_ads.ViewModels;
+using Web.ViewModels;
 using MediaAds.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
-namespace media_ads.Controllers
+namespace Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

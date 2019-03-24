@@ -34,10 +34,10 @@ namespace MediaAds.Infrastructure.Data
         {
             return new List<Platform>
             {
-                new Platform { Name = "Instagram", Users = 10000000 },
-                new Platform { Name = "Telegram", Users = 9999999 },
-                new Platform { Name = "VK", Users = 123321 },
-                new Platform { Name = "YouTube", Users = 13829017 }
+                new Platform { Name = "Instagram", Users = 100 },
+                new Platform { Name = "Telegram", Users = 200 },
+                new Platform { Name = "VK", Users = 1300 },
+                new Platform { Name = "YouTube", Users = 200 }
             };
         }
 

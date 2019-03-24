@@ -13,13 +13,13 @@ namespace MediaAds.Core.Models
         public int Views { get; set; }
         public string Image { get; set; }
 
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public int PlatformId { get; set; }
+        public int? PlatformId { get; set; }
         public Platform Platform { get; set; }
 
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         public User User { get; set; }
     }
 }
