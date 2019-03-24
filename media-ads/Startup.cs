@@ -1,12 +1,15 @@
 ﻿using System.IO;
+using MediaAds.Core;
 using MediaAds.Core.Interfaces;
 using MediaAds.Infrastructure.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 namespace media_ads
 {
@@ -25,12 +28,28 @@ namespace media_ads
             services.AddScoped(typeof(IAsyncRepository<>), typeof(MediaRepository<>));
             services.AddScoped<IChannelRepository, ChannelRepository>();
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidIssuer = JwtOptions.ISSUER,
+                    ValidateAudience = true,
+                    ValidAudience = JwtOptions.AUDIENCE,
+                    ValidateLifetime = true,
+                    IssuerSigningKey = JwtOptions.SecurityKey,
+                    ValidateIssuerSigningKey = true
+                };
+            });
+
             var config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json").Build();
 
             services.AddDbContext<MediaDbContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -47,6 +66,8 @@ namespace media_ads
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
+            app.UseCors(c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
             app.UseMvc();
         }
     }
