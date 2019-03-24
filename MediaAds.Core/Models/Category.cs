@@ -4,6 +4,5 @@
     {
         public string Name { get; set; }
         public string Icon { get; set; }
-        public string Background { get; set; }
     }
 }

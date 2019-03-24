@@ -47,32 +47,26 @@ namespace MediaAds.Infrastructure.Data
             {
                 new Category {
                     Name = "Auto",
-                    Background = "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
                 },
                 new Category {
                     Name = "Music",
-                    Background = "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
                 },
                 new Category {
                     Name = "IT",
-                    Background = "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
                 },
                 new Category {
                     Name = "Business",
-                    Background = "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
                 },
                 new Category {
                     Name = "Education",
-                    Background = "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
                 },
                 new Category {
                     Name = "News",
-                    Background = "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
                 },
             };

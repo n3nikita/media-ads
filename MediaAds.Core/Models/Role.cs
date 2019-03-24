@@ -5,9 +5,9 @@ using System.Text;
 
 namespace MediaAds.Core.Models
 {
-    public class BaseModel
+    public class Role : BaseModel
     {
-        [Key]
-        public int Id { get; set; }
+        [Required, MaxLength(50)]
+        public string Name { get; set; }
     }
 }

@@ -4,6 +4,6 @@
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public long Users { get; set; }
+        public int Users { get; set; }
     }
 }

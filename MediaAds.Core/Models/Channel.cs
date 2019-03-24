@@ -1,9 +1,13 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace MediaAds.Core.Models
 {
     public class Channel : BaseModel
     {
+        [Required, MaxLength(50)]
         public string Name { get; set; }
+        [Required, MaxLength(50)]
         public string Link { get; set; }
         public int Subscribers { get; set; }
         public int Views { get; set; }
@@ -14,5 +18,8 @@ namespace MediaAds.Core.Models
 
         public int PlatformId { get; set; }
         public Platform Platform { get; set; }
+
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }
