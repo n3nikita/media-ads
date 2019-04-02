@@ -28,6 +28,18 @@ namespace MediaAds.Infrastructure.Data
                 context.Channels.AddRange(GetChannels());
                 await context.SaveChangesAsync();
             }
+
+            if (!context.Roles.Any())
+            {
+                context.Roles.AddRange(GetRoles());
+                await context.SaveChangesAsync();
+            }
+
+            if (!context.Users.Any())
+            {
+                context.Users.AddRange(GetUsers());
+                await context.SaveChangesAsync();
+            }
         }
 
         static IEnumerable<Platform> GetPlatforms()
@@ -136,6 +148,22 @@ namespace MediaAds.Infrastructure.Data
                     Link = "@ebannoeIT",
                     Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 },
+            };
+        }
+
+        static IEnumerable<Role> GetRoles()
+        {
+            return new List<Role>
+            {
+                new Role {Name = "Admin"}
+            };
+        }
+
+        static IEnumerable<User> GetUsers()
+        {
+            return new List<User>
+            {
+                new User { Name = "Nikita", RoleId = 1, Username = "admin", Password = "123" }
             };
         }
     }

@@ -14,7 +14,7 @@ namespace Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class UserController : ControllerBase
     {
         [HttpPost, Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel user)
@@ -54,7 +54,7 @@ namespace Web.Controllers
             var claims = new List<Claim>
             {
                 new Claim("name", user.Username),
-                new Claim("role", "admin") // role from db
+                new Claim("role", "Admin") // role from db
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "token",
