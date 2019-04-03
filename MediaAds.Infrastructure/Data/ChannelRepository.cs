@@ -7,7 +7,7 @@ using MediaAds.Core.Models;
 
 namespace MediaAds.Infrastructure.Data
 {
-    public class ChannelRepository : MediaRepository<Channel>, IChannelRepository
+    public class ChannelRepository : BaseRepository<Channel>, IChannelRepository
     {
         private readonly MediaDbContext _db;
 

@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MediaAds.Infrastructure.Data
 {
-    public class MediaRepository<T> : IAsyncRepository<T> where T : BaseModel
+    public class BaseRepository<T> : IAsyncRepository<T> where T : BaseModel
     {
         protected readonly MediaDbContext _db;
 
-        public MediaRepository(MediaDbContext dbContext)
+        public BaseRepository(MediaDbContext dbContext)
         {
             _db = dbContext;
         }

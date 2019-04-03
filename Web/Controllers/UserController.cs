@@ -6,9 +6,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Web.ViewModels;
 using MediaAds.Core;
+using MediaAds.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Web.Services;
 
 namespace Web.Controllers
 {
@@ -16,13 +18,18 @@ namespace Web.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserRepository _userRepository;
+
+        public UserController(IUserRepository repository) => _userRepository = repository;
+        
+
         [HttpPost, Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel user)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var identity = GetIdentity(user);
+            var identity = await GetIdentity(user);
 
             if (user is null)
                 return Unauthorized();
@@ -41,12 +48,12 @@ namespace Web.Controllers
             return new JsonResult(encodedJwt);
         }
 
-        private ClaimsIdentity GetIdentity(LoginViewModel user)
+        private async Task<ClaimsIdentity> GetIdentity(LoginViewModel userModel)
         {
-            //var hashProvider = new Md5HashProvider();
-            //password = hashProvider.GetMd5Hash(password);
+            var hashProvider = new Md5HashService();
+            //userModel.Password = hashProvider.GetMd5Hash(userModel.Password); // TODO: add password hashes
 
-            //var user = db.Users.FirstOrDefault(x => x.Username == username && x.Password == password);
+            var user = await _userRepository.GetUserByCredentials(userModel.Username, userModel.Password);
 
             if (user is null)
                 return null;
@@ -54,7 +61,7 @@ namespace Web.Controllers
             var claims = new List<Claim>
             {
                 new Claim("name", user.Username),
-                new Claim("role", "Admin") // role from db
+                new Claim("role", "admin") // TODO: get from user
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "token",
