@@ -51,7 +51,7 @@ namespace Web.Controllers
         private async Task<ClaimsIdentity> GetIdentity(LoginViewModel userModel)
         {
             var hashProvider = new Md5HashService();
-            //userModel.Password = hashProvider.GetMd5Hash(userModel.Password); // TODO: add password hashes
+            userModel.Password = hashProvider.GetMd5Hash(userModel.Password);
 
             var user = await _userRepository.GetUserByCredentials(userModel.Username, userModel.Password);
 
@@ -61,7 +61,7 @@ namespace Web.Controllers
             var claims = new List<Claim>
             {
                 new Claim("name", user.Username),
-                new Claim("role", "admin") // TODO: get from user
+                new Claim("role", user.Role.Name)
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "token",

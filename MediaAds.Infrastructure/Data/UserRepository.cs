@@ -16,10 +16,11 @@ namespace MediaAds.Infrastructure.Data
 
         public async Task<User> GetUserByCredentials(string username, string password)
         {
-            var user = await _db.Users.FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
+            var user = await _db.Users.Include(r => r.Role)
+                                      .FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
 
-            if (user is null)
-                throw new ArgumentException($"User {username}:{password} not found");
+            //if (user is null)
+                //throw new ArgumentException($"User {username}:{password} not found");
 
             return user;
         }
