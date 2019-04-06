@@ -24,7 +24,7 @@ namespace Web.Controllers
             return Ok(channels);
         }
 
-        [HttpGet]
+        [HttpGet, Route("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var channel = await _channelRepository.GetByIdAsync(id);

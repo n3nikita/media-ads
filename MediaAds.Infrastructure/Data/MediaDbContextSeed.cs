@@ -155,7 +155,8 @@ namespace MediaAds.Infrastructure.Data
         {
             return new List<Role>
             {
-                new Role {Name = "Admin"}
+                new Role { Id = 1, Name = "Admin"},
+                new Role { Id = 2, Name = "User" }
             };
         }
 
@@ -163,7 +164,8 @@ namespace MediaAds.Infrastructure.Data
         {
             return new List<User>
             {
-                new User { Name = "Nikita", RoleId = 1, Username = "admin", Password = "202cb962ac59075b964b07152d234b70" } // 123
+                new User { Name = "Nikita", RoleId = 1, Username = "admin", Password = "202cb962ac59075b964b07152d234b70" }, // 123
+                new User { Name = "Nikita", RoleId = 1, Username = "user", Password = "202cb962ac59075b964b07152d234b70" } // 123
             };
         }
     }
