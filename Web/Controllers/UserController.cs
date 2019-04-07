@@ -31,7 +31,7 @@ namespace Web.Controllers
 
             var identity = await GetIdentity(user);
 
-            if (user is null)
+            if (identity is null)
                 return Unauthorized();
 
             var jwt = new JwtSecurityToken(
