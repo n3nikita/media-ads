@@ -1,5 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~bootstrap-4-grid';
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 * {
     margin: 0;
@@ -7,5 +8,6 @@
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
