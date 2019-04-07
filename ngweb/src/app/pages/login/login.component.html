@@ -1,6 +1,6 @@
 
 <div class="login-container">
-  <form class="login-form">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="row">
       <mat-form-field class="col-md-12">
         <input matInput formControlName="username" placeholder="Username" >
