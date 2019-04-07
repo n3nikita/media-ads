@@ -1,3 +1,6 @@
-<p>
-  navbar works!
-</p>
+<mat-toolbar [ngClass]="isLoginPage ? 'login-page-nav' : ''">
+    <span class="logo">Media Ads</span>
+    <a [routerLink]="['']" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" >Home</a>
+    <span class="fill"></span>
+    <a [routerLink]="['/login']" routerLinkActive="link-active" >Login</a>
+</mat-toolbar>

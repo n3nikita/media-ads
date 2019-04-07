@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+mat-toolbar {
+    font-size: 18px;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px -90px 50px 50px black;
+    z-index: 5;
+}
+
+.login-page-nav {
+    background-color: transparent;
+    box-shadow: none;
+    color: white;
+}
+
+.fill {
+    flex: 1 1 auto;
+}
+
+.logo{
+    margin: 0 20px 0 0;
+}
+
+a {
+    font-family: 'Roboto Light';
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+
+    &:active {
+        outline: none;
+    }
+}
+
+.link-active {
+    border-bottom: 1px solid black;
+}
