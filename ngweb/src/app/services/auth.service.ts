@@ -13,6 +13,9 @@ export class AuthService {
 
   private url = "http://localhost:63472/api/user";
 
+  // TODO: redirect the URL after loggin in
+  redirectUrl: string;
+
   constructor(private http: HttpClient) {
     this.jwtHelper = new JwtHelperService();
   }
@@ -40,6 +43,7 @@ export class AuthService {
   }
 
   getToken(): string {
+    // TODO: tokenGetter doesn't work!!!
     return this.jwtHelper.tokenGetter();
   }
 }
