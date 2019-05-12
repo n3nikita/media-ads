@@ -3,5 +3,6 @@
     <a [routerLink]="['']" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" >Home</a>
     <span class="fill"></span>
     <a [routerLink]="['/login']" *ngIf="!this.isLoggedIn" routerLinkActive="link-active" >Login</a>
-    <a href="#" *ngIf="this.isLoggedIn" (click)="logOut()">Logout</a>
+    <p *ngIf="this.isLoggedIn">hello, {{this.userInfo.username}}</p>
+    <a alt="logout" class="btn-logout" href="#" *ngIf="this.isLoggedIn" (click)="logOut()"><mat-icon >directions_run</mat-icon></a>
 </mat-toolbar>

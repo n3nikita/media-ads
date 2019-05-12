@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -19,7 +19,8 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule }
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }

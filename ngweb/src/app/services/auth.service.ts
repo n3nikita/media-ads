@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Credentials } from '../models/credentials';
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -50,5 +51,11 @@ export class AuthService {
 
     // fix
     return localStorage.getItem('token');
+  }
+
+  getUserInfo() {
+    let user = { username: localStorage.getItem('username'), role: localStorage.getItem('role') } as User;
+    // TODO: get user from server
+    return user;
   }
 }

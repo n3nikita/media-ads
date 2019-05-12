@@ -33,12 +33,34 @@ a {
     text-decoration: none;
     color: black;
     margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:active {
         outline: none;
     }
 }
 
+p {
+    font-family: 'Roboto Light';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    mat-icon {
+        margin: 0 3px;
+    }
+}
+
 .link-active {
     border-bottom: 1px solid black;
+}
+
+.btn-logout {
+
+}
+
+mat-icon {
+   
 }

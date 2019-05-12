@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart, NavigationError } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +14,10 @@ export class NavbarComponent implements OnInit {
 
   get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
+  }
+
+  get userInfo(): User {
+    return this.authService.getUserInfo();
   }
 
   constructor(private router: Router, private authService: AuthService) {
