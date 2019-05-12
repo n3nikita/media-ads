@@ -40,13 +40,6 @@ a {
     &:active {
         outline: none;
     }
-}
-
-p {
-    font-family: 'Roboto Light';
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     mat-icon {
         margin: 0 3px;
@@ -55,12 +48,4 @@ p {
 
 .link-active {
     border-bottom: 1px solid black;
-}
-
-.btn-logout {
-
-}
-
-mat-icon {
-   
 }
