@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart, NavigationError } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,11 @@ export class NavbarComponent implements OnInit {
 
   isLoginPage: boolean;
 
-  constructor(private router: Router) {
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
+  }
+
+  constructor(private router: Router, private authService: AuthService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         // Show loading indicator
@@ -30,6 +35,11 @@ export class NavbarComponent implements OnInit {
         console.log(event.error);
       }
     });
+  }
+
+  logOut(){
+    this.authService.logOut();
+    this.router.navigate(['/home']);
   }
 
   ngOnInit() {

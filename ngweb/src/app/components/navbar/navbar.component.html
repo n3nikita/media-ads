@@ -2,5 +2,6 @@
     <span class="logo">Media Ads</span>
     <a [routerLink]="['']" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" >Home</a>
     <span class="fill"></span>
-    <a [routerLink]="['/login']" routerLinkActive="link-active" >Login</a>
+    <a [routerLink]="['/login']" *ngIf="!this.isLoggedIn" routerLinkActive="link-active" >Login</a>
+    <a href="#" *ngIf="this.isLoggedIn" (click)="logOut()">Logout</a>
 </mat-toolbar>
