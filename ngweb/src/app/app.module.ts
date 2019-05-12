@@ -12,6 +12,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { UserComponent } from './pages/user/user.component';
 
+export function getToken() {
+  let token = localStorage.getItem('token');
+  console.log('call tokenGetter');
+  console.log(token);
+  return token;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +32,7 @@ import { UserComponent } from './pages/user/user.component';
     HttpClientModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: () => localStorage.getItem('token'),
-        throwNoTokenError: true
+        tokenGetter: getToken
       }
     }),
     ReactiveFormsModule,

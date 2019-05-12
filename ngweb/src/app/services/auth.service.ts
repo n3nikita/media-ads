@@ -21,7 +21,9 @@ export class AuthService {
   }
 
   get isLoggedIn(): boolean {
-    return !this.jwtHelper.isTokenExpired();
+    let token = this.getToken();
+
+    return !this.jwtHelper.isTokenExpired(token);
   }
 
   authorize(credentials: Credentials){
@@ -44,6 +46,9 @@ export class AuthService {
 
   getToken(): string {
     // TODO: tokenGetter doesn't work!!!
-    return this.jwtHelper.tokenGetter();
+    //return this.jwtHelper.tokenGetter();
+
+    // fix
+    return localStorage.getItem('token');
   }
 }
