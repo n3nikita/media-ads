@@ -38,6 +38,33 @@
             font-size: 13px;
         }
     }
+
+    .channel-stats {
+        display: flex;
+        justify-content: space-between;
+        .icon-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            mat-icon {
+                font-size: 20px;
+                margin-right: 5px;
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px;
+
+                span {
+                    margin-left: 2px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
 }
 
 .row {

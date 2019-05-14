@@ -9,11 +9,19 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    overflow: hidden;
 }
 
 .center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.green {
+    color: #63C178;
+}
+
+.red {
+    color: #C16363;
 }

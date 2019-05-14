@@ -20,12 +20,12 @@
     content: "";
     background: url("https://images.wallpaperscraft.com/image/mountains_lake_sunset_118597_1920x1080.jpg") no-repeat 0% 0%;
     // opacity: 0.3;
-    filter: blur(2px);
+    //filter: blur(2px);
+    //transform: scale(1.1);
     top: 0px;
     left: 0px;
     bottom: 0px;
     right: 0px;
-    transform: scale(1.1);
     position: absolute;
     z-index: -1;
   }
