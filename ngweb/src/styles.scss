@@ -11,3 +11,9 @@ body {
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

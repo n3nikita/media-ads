@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { UserComponent } from './pages/user/user.component';
+import { ChannelComponent } from './components/channel/channel.component';
 
 export function getToken() {
   let token = localStorage.getItem('token');
@@ -25,7 +26,8 @@ export function getToken() {
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    UserComponent
+    UserComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,
