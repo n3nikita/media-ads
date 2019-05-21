@@ -9,8 +9,7 @@
     </div>
     <div class="channel-text">
       <p class="description">
-        <!-- TODO: add description -->
-        {{channel.name}}
+        {{channel.description}}
       </p>
     </div>
     <div class="channel-stats">
@@ -28,7 +27,7 @@
       </div>
       <div class="icon-text">
         <mat-icon [inline]="true">star</mat-icon>
-        <p>78% <span class="green">(+12%)</span></p>
+        <p>{{channel.err}}% <span class="green">(+12%)</span></p>
       </div>
     </div>
   </div>
