@@ -7,10 +7,12 @@ namespace MediaAds.Core.Models
     {
         [Required, MaxLength(50)]
         public string Name { get; set; }
+        public string Description { get; set; }
         [Required, MaxLength(50)]
         public string Link { get; set; }
         public int Subscribers { get; set; }
         public int Views { get; set; }
+        public int ERR { get; set; }
         public string Image { get; set; }
 
         public int? CategoryId { get; set; }

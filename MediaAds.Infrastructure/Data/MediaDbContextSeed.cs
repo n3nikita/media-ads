@@ -93,38 +93,45 @@ namespace MediaAds.Infrastructure.Data
                     Name = "WebDEV",
                     Views = 10900,
                     Subscribers = 15000,
+                    ERR = 60,
                     PlatformId = 2,
                     CategoryId = 3,
                     Link = "@webb_dev",
-                    Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    Image = "https://static2.tgstat.com/public/images/channels/_0/ac/ac04d72a15f9992569909320f92e2f9b.jpg"
                 },
                 new Channel
                 {
                     Name = "GameDEV",
+                    Description = "Канал о разработке игр. Новости игровой индустрии, полезные статьи, обучение разработке и многое другое.",
                     Views = 1500,
+                    ERR = 30,
                     Subscribers = 1600,
                     PlatformId = 2,
                     CategoryId = 3,
                     Link = "@gamee_dev",
-                    Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    Image = "https://static.tgstat.ru/public/images/channels/_0/96/96e3f1f8d31cebc5c2ed66bdf88c59df.jpg"
                 },
                 new Channel
                 {
                     Name = "Говнокод",
                     Views = 20000,
+                    ERR = 109,
+                    Description = "Говнокод — канал о самых забавных и интересных подборках говнокода с GitHub и не только.",
                     Subscribers = 16100,
                     PlatformId = 2,
-                    CategoryId = 5,
+                    CategoryId = 3,
                     Link = "@g_code",
-                    Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    Image = "https://static2.tgstat.com/public/images/channels/_0/02/029591145fad252b28d844d823097400.jpg"
                 },
                 new Channel
                 {
-                    Name = "Developers Club",
+                    Name = "Daily Coding",
                     Views = 1000,
+                    Description = "Канал, который научит вас программировать лучше и эффективнее. Интересные задачи, обучающие статьи, советы по стилю кода и многое другое.",
                     Subscribers = 2000,
                     PlatformId = 2,
                     CategoryId = 3,
+                    ERR = 20,
                     Link = "@programmers_live",
                     Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 },
@@ -132,21 +139,25 @@ namespace MediaAds.Infrastructure.Data
                 {
                     Name = "Code Blog",
                     Views = 7000,
+                    Description = "Статьи о программировании, обучающие видео, книги, IT юмор.",
                     Subscribers = 9000,
                     PlatformId = 2,
-                    CategoryId = 5,
+                    CategoryId = 3,
+                    ERR = 42,
                     Link = "@codeblog",
-                    Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    Image = "https://static.tgstat.ru/public/images/channels/_0/c3/c33aefbb8e11beca6134f65db0e33133.jpg"
                 },
                 new Channel
                 {
                     Name = "EbannoeIT",
+                    Description = "Голая правда о нашем айти в телеграмме.",
+                    ERR = 120,
                     Views = 3000,
                     Subscribers = 1500,
                     PlatformId = 2,
-                    CategoryId = 6,
+                    CategoryId = 1,
                     Link = "@ebannoeIT",
-                    Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    Image = "https://static.tgstat.ru/public/images/channels/_0/0f/0f8a2773df847871112769dc691c1270.jpg"
                 },
             };
         }
@@ -155,8 +166,8 @@ namespace MediaAds.Infrastructure.Data
         {
             return new List<Role>
             {
-                new Role { Id = 1, Name = "Admin"},
-                new Role { Id = 2, Name = "User" }
+                new Role { Name = "Admin"},
+                new Role { Name = "User" }
             };
         }
 
@@ -165,7 +176,7 @@ namespace MediaAds.Infrastructure.Data
             return new List<User>
             {
                 new User { Name = "Nikita", RoleId = 1, Username = "admin", Password = "202cb962ac59075b964b07152d234b70" }, // 123
-                new User { Name = "Nikita", RoleId = 2, Username = "user", Password = "202cb962ac59075b964b07152d234b70" } // 123
+                new User { Name = "Nikita", RoleId = 1, Username = "user", Password = "202cb962ac59075b964b07152d234b70" } // 123
             };
         }
     }
