@@ -1,26 +1,26 @@
 <div class="channel">
   <div class="col-md-3 p-0 center">
-    <img src="http://www.stickpng.com/assets/images/5842a8fba6515b1e0ad75b03.png" alt="img">
+    <img src="{{channel.image}}" alt="img">
   </div>
   <div class="col-md-9 channel-info">
     <div class="channel-name">
-      <p class="name">WebDEV</p>
-      <p class="link">@webb_dev</p>
+      <p class="name">{{channel.name}}</p>
+      <p class="link">{{channel.link}}</p>
     </div>
     <div class="channel-text">
       <p class="description">
-        Канал о web-разработке.
-        Полезные ресурсы для Backend и Frontend разработчиков, программирование, новости IT и многое другое.
+        <!-- TODO: add description -->
+        {{channel.name}}
       </p>
     </div>
     <div class="channel-stats">
        <div class="icon-text">
         <mat-icon [inline]="true">people</mat-icon>
-        <p>15.3k <span class="green">(+375)</span></p>
+        <p>{{channel.subscribers}} <span class="green">(+375)</span></p>
       </div>
       <div class="icon-text">
         <mat-icon [inline]="true">visibility</mat-icon>
-        <p>10.2k <span class="red">(-375)</span></p>
+        <p>{{channel.views}} <span class="red">(-375)</span></p>
       </div>
       <div class="icon-text">
         <mat-icon [inline]="true">reply</mat-icon>

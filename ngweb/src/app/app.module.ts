@@ -13,6 +13,8 @@ import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { UserComponent } from './pages/user/user.component';
 import { ChannelComponent } from './components/channel/channel.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { AuthService } from './services/auth.service';
+import { ChannelsService } from './services/channels.service';
 
 export function getToken() {
   let token = localStorage.getItem('token');
@@ -43,7 +45,7 @@ export function getToken() {
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [AuthService, ChannelsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
