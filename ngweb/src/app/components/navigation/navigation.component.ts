@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ChannelsService } from 'src/app/services/channels.service';
+import { Channel } from 'src/app/models/channel';
+import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  categories: Category[];
+
+  constructor(private channelsService: ChannelsService) { }
 
   ngOnInit() {
+    this.getCategories();
+  }
+
+  getCategories(){
+    this.channelsService.getCategories().subscribe(data => this.categories = data);
   }
 
 }

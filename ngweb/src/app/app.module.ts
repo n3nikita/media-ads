@@ -15,6 +15,7 @@ import { ChannelComponent } from './components/channel/channel.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AuthService } from './services/auth.service';
 import { ChannelsService } from './services/channels.service';
+import { CategoryComponent } from './components/category/category.component';
 
 export function getToken() {
   let token = localStorage.getItem('token');
@@ -31,7 +32,8 @@ export function getToken() {
     NavbarComponent,
     UserComponent,
     ChannelComponent,
-    NavigationComponent
+    NavigationComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

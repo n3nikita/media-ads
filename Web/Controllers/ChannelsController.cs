@@ -31,6 +31,13 @@ namespace Web.Controllers
             return Ok(channel);
         }
 
+        [HttpGet, Route("categories")]
+        public async Task<IActionResult> Categories()
+        {
+            var categories = await _channelRepository.GetCategories();
+            return Ok(categories);
+        }
+
         //[HttpGet]
         //public async Task<IActionResult> GetByCategory(int category)
         //{
