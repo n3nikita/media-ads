@@ -38,11 +38,11 @@ namespace Web.Controllers
             return Ok(categories);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetByCategory(int category)
-        //{
-        //    var channels = await _channelRepository.
-        //    return Ok(channels);
-        //}
+        [HttpGet, Route("category/{id}")]
+        public async Task<IActionResult> GetByCategory(int id)
+        {
+            var channels = await _channelRepository.GetByCategory(id);
+            return Ok(channels);
+        }
     }
 }

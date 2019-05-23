@@ -21,7 +21,7 @@ export class ChannelsService {
     return this.http.get<Category[]>(this.url + 'categories');
   }
 
-  // getChannelsByCategory(id: number): Observable<Category[]>{
-  //   //TODO: add method
-  // }
+  getChannelsByCategory(id: number): Observable<Channel[]>{
+    return this.http.get<Channel[]>(this.url + 'category/' + id);
+  }
 }

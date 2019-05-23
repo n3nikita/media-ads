@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediaAds.Core.Interfaces;
@@ -17,14 +18,14 @@ namespace MediaAds.Infrastructure.Data
             _db = context;
         }
 
+        public async Task<List<Channel>> GetByCategory(int id)
+        {
+            return await _db.Channels.Where(x => x.CategoryId == id).ToListAsync();
+        }
+
         public async Task<List<Category>> GetCategories()
         {
             return await _db.Categories.ToListAsync();
         }
-
-        //public async Task<List<Channel>> GetByCategory(int categoryId)
-        //{
-        //TODO: add logic
-        //}
     }
 }

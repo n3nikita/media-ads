@@ -9,5 +9,6 @@ namespace MediaAds.Core.Interfaces
     public interface IChannelRepository : IAsyncRepository<Channel>
     {
         Task<List<Category>> GetCategories();
+        Task<List<Channel>> GetByCategory(int id);
     }
 }

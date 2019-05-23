@@ -11,19 +11,19 @@ export class HomeComponent implements OnInit {
 
   channels;
 
-  constructor(private titleService: Title, private chnnalesService: ChannelsService) { }
+  constructor(private titleService: Title, private channelsService: ChannelsService) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Home');
+    this.titleService.setTitle('Channels');
     this.getChannels();
   }
 
   getChannels(){
-    this.chnnalesService.getChannels().subscribe(data => this.channels = data);
+    this.channelsService.getChannels().subscribe(data => this.channels = data);
   }
 
   getChannelsByCategory(categoryId: number){
-    console.log(categoryId);
+    this.channelsService.getChannelsByCategory(categoryId).subscribe(data => this.channels = data);
   }
 
 }
