@@ -22,4 +22,8 @@ export class HomeComponent implements OnInit {
     this.chnnalesService.getChannels().subscribe(data => this.channels = data);
   }
 
+  getChannelsByCategory(categoryId: number){
+    console.log(categoryId);
+  }
+
 }

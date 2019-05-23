@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Category } from 'src/app/models/category';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-category',
@@ -9,10 +10,15 @@ import { Category } from 'src/app/models/category';
 export class CategoryComponent implements OnInit {
 
   @Input() category: Category;
+  @Output() categoryClick = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  categoryClicked(categoryId){
+    this.categoryClick.emit(categoryId);
   }
 
 }

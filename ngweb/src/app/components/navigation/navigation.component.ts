@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ChannelsService } from 'src/app/services/channels.service';
 import { Channel } from 'src/app/models/channel';
 import { Category } from 'src/app/models/category';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +11,9 @@ import { Category } from 'src/app/models/category';
 })
 export class NavigationComponent implements OnInit {
 
+  @Output() categoryClick = new EventEmitter();
   categories: Category[];
+  
 
   constructor(private channelsService: ChannelsService) { }
 
@@ -20,6 +23,10 @@ export class NavigationComponent implements OnInit {
 
   getCategories(){
     this.channelsService.getCategories().subscribe(data => this.categories = data);
+  }
+
+  getChannelsByCategory(categoryId){
+    this.categoryClick.emit(categoryId)
   }
 
 }
