@@ -24,4 +24,8 @@ export class ChannelsService {
   getChannelsByCategory(id: number): Observable<Channel[]>{
     return this.http.get<Channel[]>(this.url + 'category/' + id);
   }
+
+  getChannelByLink(link: string): Observable<Channel>{
+    return this.http.get<Channel>(this.url + 'link/' + link);
+  }
 }

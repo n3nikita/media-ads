@@ -10,5 +10,6 @@ namespace MediaAds.Core.Interfaces
     {
         Task<List<Category>> GetCategories();
         Task<List<Channel>> GetByCategory(int id);
+        Task<Channel> GetByLink(string link);
     }
 }

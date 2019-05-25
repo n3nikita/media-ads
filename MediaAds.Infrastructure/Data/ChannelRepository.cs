@@ -27,5 +27,10 @@ namespace MediaAds.Infrastructure.Data
         {
             return await _db.Categories.ToListAsync();
         }
+
+        public async Task<Channel> GetByLink(string link)
+        {
+            return await _db.Channels.FirstOrDefaultAsync(x => x.Link == link);
+        }
     }
 }
