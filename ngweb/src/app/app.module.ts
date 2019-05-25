@@ -16,11 +16,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { AuthService } from './services/auth.service';
 import { ChannelsService } from './services/channels.service';
 import { CategoryComponent } from './components/category/category.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 export function getToken() {
   let token = localStorage.getItem('token');
-  console.log('call tokenGetter');
-  console.log(token);
   return token;
 }
 
@@ -33,7 +32,8 @@ export function getToken() {
     UserComponent,
     ChannelComponent,
     NavigationComponent,
-    CategoryComponent
+    CategoryComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
