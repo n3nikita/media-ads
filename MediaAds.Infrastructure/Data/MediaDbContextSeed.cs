@@ -96,7 +96,7 @@ namespace MediaAds.Infrastructure.Data
                     ERR = 60,
                     PlatformId = 2,
                     CategoryId = 3,
-                    Link = "@webb_dev",
+                    Link = "webb_dev",
                     Image = "https://static2.tgstat.com/public/images/channels/_0/ac/ac04d72a15f9992569909320f92e2f9b.jpg"
                 },
                 new Channel
@@ -108,7 +108,7 @@ namespace MediaAds.Infrastructure.Data
                     Subscribers = 1600,
                     PlatformId = 2,
                     CategoryId = 3,
-                    Link = "@gamee_dev",
+                    Link = "gamee_dev",
                     Image = "https://static.tgstat.ru/public/images/channels/_0/96/96e3f1f8d31cebc5c2ed66bdf88c59df.jpg"
                 },
                 new Channel
@@ -120,7 +120,7 @@ namespace MediaAds.Infrastructure.Data
                     Subscribers = 16100,
                     PlatformId = 2,
                     CategoryId = 3,
-                    Link = "@g_code",
+                    Link = "g_code",
                     Image = "https://static2.tgstat.com/public/images/channels/_0/02/029591145fad252b28d844d823097400.jpg"
                 },
                 new Channel
@@ -132,7 +132,7 @@ namespace MediaAds.Infrastructure.Data
                     PlatformId = 2,
                     CategoryId = 3,
                     ERR = 20,
-                    Link = "@programmers_live",
+                    Link = "programmers_live",
                     Image = "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 },
                 new Channel
@@ -144,7 +144,7 @@ namespace MediaAds.Infrastructure.Data
                     PlatformId = 2,
                     CategoryId = 3,
                     ERR = 42,
-                    Link = "@codeblog",
+                    Link = "codeblog",
                     Image = "https://static.tgstat.ru/public/images/channels/_0/c3/c33aefbb8e11beca6134f65db0e33133.jpg"
                 },
                 new Channel
@@ -156,7 +156,7 @@ namespace MediaAds.Infrastructure.Data
                     Subscribers = 1500,
                     PlatformId = 2,
                     CategoryId = 1,
-                    Link = "@ebannoeIT",
+                    Link = "ebannoeIT",
                     Image = "https://static.tgstat.ru/public/images/channels/_0/0f/0f8a2773df847871112769dc691c1270.jpg"
                 },
             };
