@@ -12,7 +12,7 @@ import { EventEmitter } from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   @Output() categoryClick = new EventEmitter();
-  categories: Category[] = [{id: 0, name: 'All'} as Category];
+  categories: Category[] = [{id: 0, name: 'Все'} as Category];
   
 
   constructor(private channelsService: ChannelsService) { }

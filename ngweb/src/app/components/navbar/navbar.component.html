@@ -1,8 +1,8 @@
 <mat-toolbar [ngClass]="isLoginPage ? 'login-page-nav' : ''">
     <span class="logo">Media Ads</span>
-    <a [routerLink]="['']" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" >Home</a>
+    <a [routerLink]="['']" routerLinkActive="link-active" [routerLinkActiveOptions]="{ exact: true }" >Каналы</a>
     <span class="fill"></span>
     <a [routerLink]="['/login']" *ngIf="!this.isLoggedIn" routerLinkActive="link-active" >Login</a>
-    <a [routerLink]="['/user', this.userInfo.username]" *ngIf="this.isLoggedIn">hello, {{this.userInfo.username}}</a>
+    <a [routerLink]="['/user', this.userInfo.username]" *ngIf="this.isLoggedIn">привет, {{this.userInfo.username}}</a>
     <a alt="logout" href="#" *ngIf="this.isLoggedIn" (click)="logOut()"><mat-icon >directions_run</mat-icon></a>
 </mat-toolbar>
