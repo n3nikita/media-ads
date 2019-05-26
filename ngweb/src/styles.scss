@@ -33,6 +33,12 @@ body {
     justify-content: center;
 }
 
+.full-width {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
 
 .green {
     color: #63C178;
@@ -41,3 +47,4 @@ body {
 .red {
     color: #C16363;
 }
+
