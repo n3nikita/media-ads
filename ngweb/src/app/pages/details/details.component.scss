@@ -35,13 +35,39 @@
             margin-bottom: 20px;
             .description {
                 font-size: 17px;
-                min-height: 70px;
+                min-height: 60px;
             }
         }
     
         .channel-stats {
             display: flex;
             justify-content: space-between;
+
+            .stat-box {
+                box-shadow: 0px 5px 10px 0px #0000000a;
+                width: 150px;
+                height: 65px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                
+
+                p {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .stat-name {
+                    font-family: 'Roboto Light', sans-serif;
+                    font-size: 11px;
+                }
+
+                .stat {
+                    font-family: 'Roboto Thin', sans-serif;
+                    font-size: 30px;
+                }
+            }
         }
     }
 }

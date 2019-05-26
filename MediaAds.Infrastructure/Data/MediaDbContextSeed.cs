@@ -58,28 +58,22 @@ namespace MediaAds.Infrastructure.Data
             return new List<Category>
             {
                 new Category {
-                    Name = "Auto",
-                    Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
+                    Name = "Бизнес"
                 },
                 new Category {
-                    Name = "Music",
-                    Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
+                    Name = "Юмор"
                 },
                 new Category {
-                    Name = "IT",
-                    Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
+                    Name = "IT"
                 },
                 new Category {
-                    Name = "Business",
-                    Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
+                    Name = "Образование"
                 },
                 new Category {
-                    Name = "Education",
-                    Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
+                    Name = "Новости"
                 },
                 new Category {
-                    Name = "News",
-                    Icon = "https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/SUV-512.png"
+                    Name = "Блог"
                 },
             };
         }
@@ -94,6 +88,7 @@ namespace MediaAds.Infrastructure.Data
                     Views = 10900,
                     Subscribers = 15000,
                     ERR = 60,
+                    Description = "Канал о web-разработке. Полезные ресурсы для Backend и Frontend разработчиков, программирование, новости IT и многое другое.",
                     PlatformId = 2,
                     CategoryId = 3,
                     Link = "webb_dev",
