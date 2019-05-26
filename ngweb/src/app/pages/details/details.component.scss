@@ -71,3 +71,27 @@
         }
     }
 }
+
+.charts {
+    margin-top: 50px;
+
+    .chart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .chart-name {
+            font-size: 21px;
+            margin-bottom: 10px;
+            font-family: 'Roboto Light', sans-serif;
+        }
+    }
+}
+
+.full-width {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}

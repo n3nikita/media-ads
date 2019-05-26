@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [],
@@ -11,7 +12,8 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, 
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    NgxChartsModule
   ],
   exports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, 
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    NgxChartsModule
   ]
 })
 export class SharedModule { }

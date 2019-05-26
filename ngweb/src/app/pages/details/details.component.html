@@ -16,17 +16,17 @@
     <div class="channel-stats">
       <div class="stat-box">
         <p class="stat-name">Подписчики:</p>
-        <p class="stat">{{channel.subscribers}}</p>
+        <p class="stat">{{numWithSpaces(channel.subscribers)}}</p>
       </div>
 
       <div class="stat-box">
         <p class="stat-name">Охват поста:</p>
-        <p class="stat">{{channel.views}}</p>
+        <p class="stat">{{numWithSpaces(channel.views)}}</p>
       </div>
 
       <div class="stat-box">
         <p class="stat-name">Дневной охват:</p>
-        <p class="stat">{{channel.views}}</p>
+        <p class="stat">{{numWithSpaces(channel.views)}}</p>
       </div>
 
       <div class="stat-box">
@@ -39,6 +39,86 @@
         <p class="stat">{{channel.err}}%</p>
       </div>
     </div>
-
   </div>
+</div>
+<div class="container-fluid full-width">
+    <div class="row charts">
+        <div class="col-md-4 p-0 chart">
+          <p class="chart-name">Подписчики</p>
+          <ngx-charts-line-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="subs"
+            [gradient]="false"
+            [xAxis]="true"
+            [yAxis]="true"
+            [legend]="false"
+            [showXAxisLabel]="false"
+            [showYAxisLabel]="false"
+            [autoScale]="true"
+            [timeline]="true">
+          </ngx-charts-line-chart>
+        </div>
+        <div class="col-md-4 p-0 chart">
+            <p class="chart-name">Просмотры</p>
+            <ngx-charts-line-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="views"
+            [gradient]="false"
+            [xAxis]="true"
+            [yAxis]="true"
+            [legend]="false"
+            [showXAxisLabel]="false"
+            [showYAxisLabel]="false"
+            [autoScale]="true"
+            [timeline]="true">
+          </ngx-charts-line-chart>
+        </div>
+        <div class="col-md-4 p-0 chart">
+            <p class="chart-name">Дневной охват</p>
+            <ngx-charts-line-chart
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="dayViews"
+            [gradient]="false"
+            [xAxis]="true"
+            [yAxis]="true"
+            [legend]="false"
+            [showXAxisLabel]="false"
+            [showYAxisLabel]="false"
+            [autoScale]="true"
+            [timeline]="true">
+          </ngx-charts-line-chart>
+        </div>
+      </div>
+
+      <!-- <div class="row charts">
+        <div class="col-md-6 p-0 chart">
+          <p class="chart-name">Посты</p>
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [results]="multi2"
+            [gradient]="false"
+            [xAxis]="true"
+            [yAxis]="true"
+            [legend]="false"
+            [showXAxisLabel]="false"
+            [showYAxisLabel]="false">
+          </ngx-charts-bar-vertical>
+        </div>
+        <div class="col-md-6 p-0 chart">
+          <p class="chart-name">Цитаты</p>
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [results]="multi2"
+            [gradient]="false"
+            [xAxis]="true"
+            [yAxis]="true"
+            [legend]="false"
+            [showXAxisLabel]="false"
+            [showYAxisLabel]="false">
+          </ngx-charts-bar-vertical>
+        </div>
+      </div> -->
 </div>
