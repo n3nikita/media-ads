@@ -3,4 +3,7 @@
   <div class="channel col-md-6" *ngFor="let channel of channels">
     <app-channel [channel]="channel"></app-channel>
   </div>
+  <div class="empty" *ngIf="this.empty">
+    Каналы не найдены
+  </div>
 </div>

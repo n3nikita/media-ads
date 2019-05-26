@@ -15,11 +15,11 @@
     <div class="channel-stats">
        <div class="icon-text">
         <mat-icon [inline]="true">people</mat-icon>
-        <p>{{channel.subscribers}} <span class="green">(+375)</span></p>
+        <p>{{nFormatter(channel.subscribers, 1)}} <span class="green">(+375)</span></p>
       </div>
       <div class="icon-text">
         <mat-icon [inline]="true">visibility</mat-icon>
-        <p>{{channel.views}} <span class="red">(-375)</span></p>
+        <p>{{nFormatter(channel.views, 1)}} <span class="red">(-375)</span></p>
       </div>
       <div class="icon-text">
         <mat-icon [inline]="true">reply</mat-icon>

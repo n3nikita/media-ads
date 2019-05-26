@@ -12,7 +12,7 @@ import { EventEmitter } from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   @Output() categoryClick = new EventEmitter();
-  categories: Category[];
+  categories: Category[] = [{id: 0, name: 'All'} as Category];
   
 
   constructor(private channelsService: ChannelsService) { }
@@ -22,7 +22,7 @@ export class NavigationComponent implements OnInit {
   }
 
   getCategories(){
-    this.channelsService.getCategories().subscribe(data => this.categories = data);
+    this.channelsService.getCategories().subscribe(data => this.categories.push(...data));
   }
 
   getChannelsByCategory(categoryId){
