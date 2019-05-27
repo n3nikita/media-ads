@@ -157,6 +157,34 @@ namespace MediaAds.Infrastructure.Data
             };
         }
 
+        static IEnumerable<Review> GetReviews()
+        {
+            return new List<Review>
+            {
+                new Review
+                {
+                    Text = "Все отличо, спасибо!",
+                    Raiting = 5,
+                    ChannelId = 1,
+                    UserId = 1
+                },
+                new Review
+                {
+                    Text = "супер, спасибо!",
+                    Raiting = 5,
+                    ChannelId = 1,
+                    UserId = 1
+                },
+                new Review
+                {
+                    Text = "Все отличо, спасибо!",
+                    Raiting = 5,
+                    ChannelId = 2,
+                    UserId = 1
+                },
+            };
+        }
+
         static IEnumerable<Role> GetRoles()
         {
             return new List<Role>

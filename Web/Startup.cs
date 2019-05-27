@@ -2,6 +2,7 @@
 using MediaAds.Core;
 using MediaAds.Core.Interfaces;
 using MediaAds.Infrastructure.Data;
+using MediaAds.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,7 @@ namespace Web
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IChannelRepository, ChannelRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
