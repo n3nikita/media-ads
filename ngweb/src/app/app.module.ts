@@ -44,7 +44,8 @@ export function getToken() {
     HttpClientModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: getToken
+        tokenGetter: getToken,
+        whitelistedDomains: ['localhost:63472']
       }
     }),
     ReactiveFormsModule,

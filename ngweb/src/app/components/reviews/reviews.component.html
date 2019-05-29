@@ -1,3 +1,21 @@
 <div class="row">
   <app-review *ngFor="let review of reviews" [review]="review" class="col-md-6"></app-review>
 </div>
+<div class="row">
+  <div class="col-md-12 review-form center" *ngIf="this.isLoggedIn">
+    <form [formGroup]="reviewForm" (ngSubmit)="create()">
+        <mat-form-field>
+          <textarea matInput formControlName="text" placeholder="Text"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="rating">
+          <input type="number" matInput formControlName="rating" placeholder="Rating">
+        </mat-form-field>
+  
+        <div class="submit-button">
+          <button color="accent" mat-raised-button>Create</button>
+          <mat-error class="invalid-creds" *ngIf="invalidCredentials">error</mat-error>
+        </div>
+    </form>
+  </div>
+</div>

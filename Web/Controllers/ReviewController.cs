@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediaAds.Core.Interfaces;
+using MediaAds.Core.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,6 +58,16 @@ namespace Web.Controllers
         {
             var rating = await _reviewRepository.GetAverageRating(id);
             return Ok(rating);
+        }
+
+        [HttpPost, Authorize]
+        public async Task<IActionResult> Post([FromBody]Review review)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            await _reviewRepository.CreateAsync(review);
+            return Ok();
         }
     }
 }

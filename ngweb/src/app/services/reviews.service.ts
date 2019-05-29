@@ -31,4 +31,8 @@ export class ReviewsService {
   getAerageRating(id: number): Observable<number> {
     return this.http.get<number>(this.url + 'rating/' + id);
   }
+
+  createReview(review: Review) {
+    return this.http.post(this.url, review);
+  }
 }
