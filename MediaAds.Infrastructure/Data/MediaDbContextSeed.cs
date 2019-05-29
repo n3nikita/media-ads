@@ -40,6 +40,12 @@ namespace MediaAds.Infrastructure.Data
                 context.Users.AddRange(GetUsers());
                 await context.SaveChangesAsync();
             }
+
+            if (!context.Reviews.Any())
+            {
+                context.Reviews.AddRange(GetReviews());
+                await context.SaveChangesAsync();
+            }
         }
 
         static IEnumerable<Platform> GetPlatforms()
