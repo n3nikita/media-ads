@@ -1,0 +1,8 @@
+<div class="review">
+  <div class="info">
+    <a [routerLink]="['/user', review.user.username]" class="name">{{review.user.name}}</a>
+    <p class="date">{{review.date | date:'dd.MM.yyyy'}}</p>
+    <p class="rating">{{review.rating}} / 5<mat-icon>star</mat-icon></p>
+  </div>
+  <p class="text">{{review.text}}</p>
+</div>

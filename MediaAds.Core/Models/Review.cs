@@ -9,7 +9,8 @@ namespace MediaAds.Core.Models
     {
         public string Text { get; set; }
         [Required, Range(1d,5d)]
-        public double Raiting { get; set; }
+        public double Rating { get; set; }
+        public DateTime Date { get; set; }
         
         public int UserId { get; set; }
         public User User { get; set; }

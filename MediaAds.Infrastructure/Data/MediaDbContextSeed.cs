@@ -170,21 +170,32 @@ namespace MediaAds.Infrastructure.Data
                 new Review
                 {
                     Text = "Все отличо, спасибо!",
-                    Raiting = 5,
+                    Rating = 5,
+                    Date = DateTime.Now,
                     ChannelId = 1,
                     UserId = 1
                 },
                 new Review
                 {
                     Text = "супер, спасибо!",
-                    Raiting = 5,
+                    Rating = 5,
+                    Date = DateTime.Now,
                     ChannelId = 1,
                     UserId = 1
                 },
                 new Review
                 {
+                    Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus justo tortor, et gravida orci fermentum vel. Integer vel mi congue, euismod lacus sed, tincidunt massa. Donec orci diam, pellentesque a felis non, viverra placerat felis. Donec sit amet mollis massa, at gravida turpis. Curabitur facilisis et felis a vestibulum. Aliquam vel sem et ipsum pellentesque interdum. Nulla dolor arcu, pretium eget interdum sed, pharetra id orci. Cras nec risus congue, facilisis magna ut, sollicitudin nibh. Integer ultricies eget augue ullamcorper congue. Proin vitae metus turpis. Donec elementum diam eros, sit amet tempor dui vulputate ut.",
+                    Rating = 4,
+                    Date = DateTime.Now,
+                    ChannelId = 1,
+                    UserId = 2
+                },
+                new Review
+                {
                     Text = "Все отличо, спасибо!",
-                    Raiting = 5,
+                    Rating = 5,
+                    Date = DateTime.Now,
                     ChannelId = 2,
                     UserId = 1
                 },

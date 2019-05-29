@@ -9,6 +9,7 @@ namespace MediaAds.Core.Interfaces
     public interface IReviewRepository : IAsyncRepository<Review>
     {
         Task<List<Review>> GetByChannel(int id);
+        Task<List<Review>> GetByChannel(string link);
         Task<List<Review>> GetByUser(int id);
         Task<double> GetAverageRating(int id);
     }

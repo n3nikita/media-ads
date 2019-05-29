@@ -17,6 +17,8 @@ import { AuthService } from './services/auth.service';
 import { ChannelsService } from './services/channels.service';
 import { CategoryComponent } from './components/category/category.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
+import { ReviewComponent } from './components/reviews/review/review.component';
 
 export function getToken() {
   let token = localStorage.getItem('token');
@@ -33,7 +35,9 @@ export function getToken() {
     ChannelComponent,
     NavigationComponent,
     CategoryComponent,
-    DetailsComponent
+    DetailsComponent,
+    ReviewsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

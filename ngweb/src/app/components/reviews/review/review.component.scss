@@ -1,0 +1,51 @@
+.review {
+    margin-bottom: 30px;
+    padding: 10px;
+    min-height: 70px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0px #0000001a;
+
+    .info {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        p:nth-child(3){
+            margin-left: auto; 
+        }
+
+        .name {
+            font-family: 'Roboto Black', sans-serif;
+            margin-right: 10px;
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .date {
+            font-family: 'Roboto Light', sans-serif;
+            color: rgba(0, 0, 0, 0.24);
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            font-family: 'Roboto Light', sans-serif;
+
+            mat-icon {
+                margin-left: 5px;
+                color: #6a81ff;
+            }
+        }
+    }
+
+
+
+    .text {
+        font-family: 'Roboto Light', sans-serif;
+        padding: 10px 0;
+    }
+}

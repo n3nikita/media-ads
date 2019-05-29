@@ -30,10 +30,17 @@ namespace Web.Controllers
             return Ok(review);
         }
 
-        [HttpGet, Route("channel/{id}")]
+        [HttpGet, Route("channel/{id:int}")]
         public async Task<IActionResult> GetByChannel(int id)
         {
             var reviews = await _reviewRepository.GetByChannel(id);
+            return Ok(reviews);
+        }
+
+        [HttpGet, Route("channel/{link}")]
+        public async Task<IActionResult> GetByChannel([FromRoute]string link)
+        {
+            var reviews = await _reviewRepository.GetByChannel(link);
             return Ok(reviews);
         }
 
