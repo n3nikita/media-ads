@@ -13,9 +13,9 @@ namespace MediaAds.Core.Models
         public DateTime Date { get; set; }
         
         public int UserId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         public int ChannelId { get; set; }
-        public Channel Channel { get; set; }
+        public virtual Channel Channel { get; set; }
     }
 }

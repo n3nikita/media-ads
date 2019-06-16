@@ -11,7 +11,7 @@ import { Channel } from 'src/app/models/channel';
 export class DetailsComponent implements OnInit {
 
   channelLink: string;
-  channel: Channel = new Channel();
+  channel: Channel;
 
   view = [550, 300];
   

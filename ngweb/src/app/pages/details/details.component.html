@@ -1,129 +1,104 @@
-<div class="row main">
-  <div class="col-md-3 p-0 center">
-    <img class="logo" src="{{channel.image}}" alt="{{channel.name}}">
+<div *ngIf="channel">
+  <div class="row main" *ngIf="channel">
+    <div class="col-md-3 p-0 center">
+      <img class="logo" src="{{channel.image}}" alt="{{channel.name}}">
+    </div>
+    <div class="col-md-9 channel-info">
+      <div class="channel-name">
+        <a class="name" [routerLink]="['channel', channel.link]">{{channel.name}}</a>
+        <a class="link center" href="https://t.me/{{channel.link}}" role="button" target="_blank">@{{channel.link}}</a>
+      </div>
+      <div class="channel-text">
+        <p class="description">
+          {{channel.description}}
+        </p>
+      </div>
+
+      <div class="channel-stats">
+        <div class="stat-box">
+          <p class="stat-name">Подписчики:</p>
+          <p class="stat">{{numWithSpaces(channel.subscribers)}}</p>
+        </div>
+
+        <div class="stat-box">
+          <p class="stat-name">Охват поста:</p>
+          <p class="stat">{{numWithSpaces(channel.views)}}</p>
+        </div>
+
+        <div class="stat-box">
+          <p class="stat-name">Дневной охват:</p>
+          <p class="stat">{{numWithSpaces(channel.views)}}</p>
+        </div>
+
+        <div class="stat-box">
+          <p class="stat-name">Цитаты:</p>
+          <p class="stat">7</p>
+        </div>
+
+        <div class="stat-box">
+          <p class="stat-name">ERR:</p>
+          <p class="stat">{{channel.err}}%</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-9 channel-info">
-    <div class="channel-name">
-      <a class="name" [routerLink]="['channel', channel.link]">{{channel.name}}</a>
-      <a class="link center" href="https://t.me/{{channel.link}}" role="button" target="_blank">@{{channel.link}}</a>
-    </div>
-    <div class="channel-text">
-      <p class="description">
-        {{channel.description}}
-      </p>
-    </div>
 
-    <div class="channel-stats">
-      <div class="stat-box">
-        <p class="stat-name">Подписчики:</p>
-        <p class="stat">{{numWithSpaces(channel.subscribers)}}</p>
-      </div>
-
-      <div class="stat-box">
-        <p class="stat-name">Охват поста:</p>
-        <p class="stat">{{numWithSpaces(channel.views)}}</p>
-      </div>
-
-      <div class="stat-box">
-        <p class="stat-name">Дневной охват:</p>
-        <p class="stat">{{numWithSpaces(channel.views)}}</p>
-      </div>
-
-      <div class="stat-box">
-        <p class="stat-name">Цитаты:</p>
-        <p class="stat">7</p>
-      </div>
-
-      <div class="stat-box">
-        <p class="stat-name">ERR:</p>
-        <p class="stat">{{channel.err}}%</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid full-width">
+  <div class="container-fluid full-width">
     <div class="row charts">
-        <div class="col-md-4 p-0 chart">
-          <p class="chart-name">Подписчики</p>
-          <ngx-charts-line-chart
-            [view]="view"
-            [scheme]="colorScheme"
-            [results]="subs"
-            [gradient]="false"
-            [xAxis]="true"
-            [yAxis]="true"
-            [legend]="false"
-            [showXAxisLabel]="false"
-            [showYAxisLabel]="false"
-            [autoScale]="true"
-            [timeline]="true">
-          </ngx-charts-line-chart>
-        </div>
-        <div class="col-md-4 p-0 chart">
-            <p class="chart-name">Просмотры</p>
-            <ngx-charts-line-chart
-            [view]="view"
-            [scheme]="colorScheme"
-            [results]="views"
-            [gradient]="false"
-            [xAxis]="true"
-            [yAxis]="true"
-            [legend]="false"
-            [showXAxisLabel]="false"
-            [showYAxisLabel]="false"
-            [autoScale]="true"
-            [timeline]="true">
-          </ngx-charts-line-chart>
-        </div>
-        <div class="col-md-4 p-0 chart">
-            <p class="chart-name">Дневной охват</p>
-            <ngx-charts-line-chart
-            [view]="view"
-            [scheme]="colorScheme"
-            [results]="dayViews"
-            [gradient]="false"
-            [xAxis]="true"
-            [yAxis]="true"
-            [legend]="false"
-            [showXAxisLabel]="false"
-            [showYAxisLabel]="false"
-            [autoScale]="true"
-            [timeline]="true">
-          </ngx-charts-line-chart>
-        </div>
+      <div class="col-md-4 p-0 chart">
+        <p class="chart-name">Подписчики</p>
+        <ngx-charts-line-chart [view]="view" [scheme]="colorScheme" [results]="subs" [gradient]="false" [xAxis]="true"
+          [yAxis]="true" [legend]="false" [showXAxisLabel]="false" [showYAxisLabel]="false" [autoScale]="true"
+          [timeline]="true">
+        </ngx-charts-line-chart>
       </div>
+      <div class="col-md-4 p-0 chart">
+        <p class="chart-name">Просмотры</p>
+        <ngx-charts-line-chart [view]="view" [scheme]="colorScheme" [results]="views" [gradient]="false" [xAxis]="true"
+          [yAxis]="true" [legend]="false" [showXAxisLabel]="false" [showYAxisLabel]="false" [autoScale]="true"
+          [timeline]="true">
+        </ngx-charts-line-chart>
+      </div>
+      <div class="col-md-4 p-0 chart">
+        <p class="chart-name">Дневной охват</p>
+        <ngx-charts-line-chart [view]="view" [scheme]="colorScheme" [results]="dayViews" [gradient]="false"
+          [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="false" [showYAxisLabel]="false"
+          [autoScale]="true" [timeline]="true">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
 
-      <!-- <div class="row charts">
-        <div class="col-md-6 p-0 chart">
-          <p class="chart-name">Посты</p>
-          <ngx-charts-bar-vertical
-            [view]="view"
-            [results]="multi2"
-            [gradient]="false"
-            [xAxis]="true"
-            [yAxis]="true"
-            [legend]="false"
-            [showXAxisLabel]="false"
-            [showYAxisLabel]="false">
-          </ngx-charts-bar-vertical>
-        </div>
-        <div class="col-md-6 p-0 chart">
-          <p class="chart-name">Цитаты</p>
-          <ngx-charts-bar-vertical
-            [view]="view"
-            [results]="multi2"
-            [gradient]="false"
-            [xAxis]="true"
-            [yAxis]="true"
-            [legend]="false"
-            [showXAxisLabel]="false"
-            [showYAxisLabel]="false">
-          </ngx-charts-bar-vertical>
-        </div>
-      </div> -->
-</div>
+    <!-- <div class="row charts">
+          <div class="col-md-6 p-0 chart">
+            <p class="chart-name">Посты</p>
+            <ngx-charts-bar-vertical
+              [view]="view"
+              [results]="multi2"
+              [gradient]="false"
+              [xAxis]="true"
+              [yAxis]="true"
+              [legend]="false"
+              [showXAxisLabel]="false"
+              [showYAxisLabel]="false">
+            </ngx-charts-bar-vertical>
+          </div>
+          <div class="col-md-6 p-0 chart">
+            <p class="chart-name">Цитаты</p>
+            <ngx-charts-bar-vertical
+              [view]="view"
+              [results]="multi2"
+              [gradient]="false"
+              [xAxis]="true"
+              [yAxis]="true"
+              [legend]="false"
+              [showXAxisLabel]="false"
+              [showYAxisLabel]="false">
+            </ngx-charts-bar-vertical>
+          </div>
+        </div> -->
+  </div>
 
-<div>
-  <app-reviews [channelLink]="channelLink"></app-reviews>
+  <div class="col-md-12">
+    <app-reviews [channel]="channel"></app-reviews>
+  </div>
 </div>

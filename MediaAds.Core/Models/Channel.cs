@@ -16,12 +16,12 @@ namespace MediaAds.Core.Models
         public string Image { get; set; }
 
         public int? CategoryId { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         public int? PlatformId { get; set; }
-        public Platform Platform { get; set; }
+        public virtual Platform Platform { get; set; }
 
         public int? UserId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
     }
 }

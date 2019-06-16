@@ -50,7 +50,7 @@ namespace Web
                 .AddJsonFile("appsettings.json").Build();
 
             services.AddDbContext<MediaDbContext>(options =>
-                options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+                options.UseLazyLoadingProxies().UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

@@ -27,7 +27,7 @@ namespace MediaAds.Infrastructure.Repositories
         public async Task<List<Review>> GetByChannel(string link)
         {
             var channel = await _db.Channels.FirstOrDefaultAsync(x => x.Link == link);
-            return await _db.Reviews.Where(x => x.ChannelId == channel.Id).Include(x => x.User).ToListAsync();
+            return await _db.Reviews.Where(x => x.ChannelId == channel.Id).ToListAsync();
         }
 
         public async Task<List<Review>> GetByUser(int id)

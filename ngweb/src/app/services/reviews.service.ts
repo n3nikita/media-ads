@@ -32,7 +32,7 @@ export class ReviewsService {
     return this.http.get<number>(this.url + 'rating/' + id);
   }
 
-  createReview(review: Review) {
+  createReview(review: Review): Observable<any> {
     return this.http.post(this.url, review);
   }
 }

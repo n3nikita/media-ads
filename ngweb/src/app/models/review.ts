@@ -1,5 +1,5 @@
 export class Review {
-    id: number;
+    id?: number;
     text: string;
     rating: number;
     date: Date;
