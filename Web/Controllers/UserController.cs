@@ -60,6 +60,7 @@ namespace Web.Controllers
 
             var claims = new List<Claim>
             {
+                new Claim("id", user.Id.ToString()),
                 new Claim("name", user.Username),
                 new Claim("role", user.Role.Name)
             };

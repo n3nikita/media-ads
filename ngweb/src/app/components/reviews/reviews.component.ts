@@ -4,6 +4,7 @@ import { Review } from 'src/app/models/review';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Channel } from 'src/app/models/channel';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-reviews',
@@ -13,6 +14,7 @@ import { Channel } from 'src/app/models/channel';
 export class ReviewsComponent implements OnInit {
 
   @Input() channel: Channel;
+  user: User;
   reviews: Review[];
 
   reviewForm = new FormGroup({
@@ -29,12 +31,12 @@ export class ReviewsComponent implements OnInit {
   ngOnInit() {
     this.reviewService.getReviewsByChannelLink(this.channel.link)
       .subscribe(data => this.reviews = data);
+    this.user = this.authService.getUserInfo();
   }
 
   create(){
-    let review : Review = { text: this.reviewForm.get('text').value, rating: this.reviewForm.get('rating').value, channelId: this.channel.id, userId: 1, date: new Date() };
-    this.reviewService.createReview(review).subscribe(result => { 
-      console.log(result);
+    let review : Review = { text: this.reviewForm.get('text').value, rating: this.reviewForm.get('rating').value, channelId: this.channel.id, userId: this.user.id, date: new Date() };
+    this.reviewService.createReview(review).subscribe(result => {
       this.reviews.push(result); 
       this.reviewForm.reset();
     });

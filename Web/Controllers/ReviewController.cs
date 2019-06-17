@@ -67,7 +67,9 @@ namespace Web.Controllers
                 return BadRequest();
 
             await _reviewRepository.CreateAsync(review);
-            return CreatedAtAction(nameof(Get), new { id = review.Id }, review);
+            //return CreatedAtAction(nameof(Get), new { id = review.Id }, review);
+            return RedirectToAction("Get", new { id = review.Id });
         }
+
     }
 }

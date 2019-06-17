@@ -32,6 +32,7 @@ export class AuthService {
   }
 
   logOut() {
+    localStorage.removeItem('userid');
     localStorage.removeItem('username');
     localStorage.removeItem('token');
     localStorage.removeItem('role');
@@ -40,6 +41,7 @@ export class AuthService {
   setToken(token: string){
     let decodedToken = this.jwtHelper.decodeToken(token);
     console.log('Decoded token', decodedToken);
+    localStorage.setItem('userid', decodedToken.id);
     localStorage.setItem('username', decodedToken.name);
     localStorage.setItem('role', decodedToken.role);
     localStorage.setItem('token', token);
@@ -54,7 +56,7 @@ export class AuthService {
   }
 
   getUserInfo() {
-    let user = { username: localStorage.getItem('username'), role: localStorage.getItem('role') } as User;
+    let user = { id: +localStorage.getItem('userid'), username: localStorage.getItem('username'), role: localStorage.getItem('role') } as User;
     // TODO: get user from server
     return user;
   }
