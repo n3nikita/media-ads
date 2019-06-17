@@ -4,18 +4,21 @@
 <div class="row">
   <div class="col-md-12 review-form center" *ngIf="this.isLoggedIn">
     <form [formGroup]="reviewForm" (ngSubmit)="create()">
+      <h2>Оставить отзыв</h2>
+      <div class="inputs">
         <mat-form-field>
-          <textarea matInput formControlName="text" placeholder="Text"></textarea>
+          <textarea matInput formControlName="text" placeholder="Текст"></textarea>
         </mat-form-field>
 
         <mat-form-field class="rating">
-          <input type="number" matInput formControlName="rating" placeholder="Rating">
+          <input type="number" matInput formControlName="rating" placeholder="Оценка">
         </mat-form-field>
-  
-        <div class="submit-button">
-          <button color="accent" mat-raised-button>Create</button>
-          <mat-error class="invalid-creds" *ngIf="invalidCredentials">error</mat-error>
-        </div>
+      </div>
+
+      <div class="submit-button">
+        <button color="accent" mat-raised-button>Отправить</button>
+        <mat-error class="invalid-creds" *ngIf="invalidCredentials">error</mat-error>
+      </div>
     </form>
   </div>
 </div>

@@ -2,11 +2,18 @@
     margin-bottom: 50px;
 
     form {
+        padding: 25px 50px;
         display: flex;
+        flex-direction: column;
+        box-shadow: 0 5px 10px 0px #0000001a;
+
+        h2 {
+            margin-bottom: 10px;
+        }
 
         .rating {
             margin-left: 10px;
-            width: 50px;
+            width: 70px;
         }
     }
 }
