@@ -16,7 +16,7 @@
       </div>
 
       <div class="submit-button">
-        <button color="accent" mat-raised-button>Отправить</button>
+        <button [disabled]="!reviewForm.valid" color="accent" mat-raised-button>Отправить</button>
         <mat-error class="invalid-creds" *ngIf="invalidCredentials">error</mat-error>
       </div>
     </form>

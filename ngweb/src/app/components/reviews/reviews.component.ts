@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ReviewsService } from 'src/app/services/reviews.service';
 import { Review } from 'src/app/models/review';
 import { AuthService } from 'src/app/services/auth.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Channel } from 'src/app/models/channel';
 import { User } from 'src/app/models/user';
 
@@ -19,7 +19,7 @@ export class ReviewsComponent implements OnInit {
 
   reviewForm = new FormGroup({
     text: new FormControl(''),
-    rating: new FormControl('')
+    rating: new FormControl('', [Validators.required, Validators.max(5)])
   });
 
   constructor(private reviewService: ReviewsService, private authService: AuthService) { }
