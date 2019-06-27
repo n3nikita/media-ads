@@ -1,5 +1,8 @@
 <div class="row">
   <app-review *ngFor="let review of reviews" [review]="review" class="col-md-6"></app-review>
+  <div class="empty" *ngIf="this.empty">
+    Отзывы не найдены
+  </div>
 </div>
 <div class="row">
   <div class="col-md-12 review-form center" *ngIf="this.isLoggedIn">

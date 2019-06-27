@@ -16,6 +16,7 @@ export class ReviewsComponent implements OnInit {
   @Input() channel: Channel;
   user: User;
   reviews: Review[];
+  empty: boolean = false;
 
   reviewForm = new FormGroup({
     text: new FormControl(''),
@@ -30,12 +31,25 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit() {
     this.reviewService.getReviewsByChannelLink(this.channel.link)
-      .subscribe(data => this.reviews = data);
+      .subscribe(data => {
+        if(!data.length) {
+          this.empty = true;
+        } else {
+          this.reviews = data;
+          this.empty = false;
+        }
+      });
     this.user = this.authService.getUserInfo();
   }
 
   create(){
-    let review : Review = { text: this.reviewForm.get('text').value, rating: this.reviewForm.get('rating').value, channelId: this.channel.id, userId: this.user.id, date: new Date() };
+    let review : Review = { 
+      text: this.reviewForm.get('text').value, 
+      rating: this.reviewForm.get('rating').value, 
+      channelId: this.channel.id, userId: this.user.id, 
+      date: new Date() 
+    };
+
     this.reviewService.createReview(review).subscribe(result => {
       this.reviews.push(result); 
       this.reviewForm.reset();

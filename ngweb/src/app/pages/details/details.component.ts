@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChannelsService } from 'src/app/services/channels.service';
 import { Channel } from 'src/app/models/channel';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-details',
@@ -182,12 +183,15 @@ export class DetailsComponent implements OnInit {
     },
   ]
 
-  constructor(private route: ActivatedRoute, private channelService: ChannelsService) { }
+  constructor(private route: ActivatedRoute, private channelService: ChannelsService, private title: Title) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.channelLink = params['link'];
-      this.channelService.getChannelByLink(this.channelLink).subscribe(data => this.channel = data);
+      this.channelService.getChannelByLink(this.channelLink).subscribe(data => {
+        this.channel = data;
+        this.title.setTitle(this.channel.name + ' | Media Ads');
+      });
     });
   }
 

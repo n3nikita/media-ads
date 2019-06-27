@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Login');
+    this.titleService.setTitle('Логин | Media Ads');
   }
 
   login(){

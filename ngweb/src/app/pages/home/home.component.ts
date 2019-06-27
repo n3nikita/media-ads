@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(private titleService: Title, private channelsService: ChannelsService) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Channels');
+    this.titleService.setTitle('Все каналы | Media Ads');
     this.getChannels();
   }
 
