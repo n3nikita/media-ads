@@ -6,7 +6,6 @@ using MediaAds.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,8 +51,7 @@ namespace Web
             services.AddDbContext<MediaDbContext>(options =>
                 options.UseLazyLoadingProxies().UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
-            services.AddCors();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,8 +68,7 @@ namespace Web
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
-            app.UseCors(c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
-            app.UseMvc();
+            //app.UseCors(c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
         }
     }
 }
